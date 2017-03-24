@@ -18,6 +18,7 @@ from django.contrib import admin
 from attendance import views
 
 urlpatterns = [
-    #url(r'^', views.attendance_count, name='attendance_count'),
-    url(r'^mood/', views.class_mood, name='class_mood'),
-]
+    url(r'^mood_analysis/$', views.class_mood, name='class_mood'),
+    url(r'profiles/(?P<user_id>[0-9]+?)/$', views.profile, name='profile'),
+    url(r'profiles/(?P<user_id>[0-9]+?)/edit/$', views.edit_profile, name='edit-profile'),
+] 
